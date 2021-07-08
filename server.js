@@ -1,5 +1,19 @@
+
 const express = require('express');
 
 const app = express();
 
-app.listenb(3000);
+app.use((req, res, next) => {
+    console.log('hello');
+})
+
+
+app.get('/',(req, res) => {
+    const user = {
+        name:'sally',
+        hobbie: 'soccer'
+    }
+    res.send(user);
+});
+
+app.listen(3000);
